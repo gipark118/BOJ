@@ -2,24 +2,20 @@
 
 int main(void)
 {
-	int a;
-	int tmp, tmp_cnt;
+	int n;
+	int max;
 	int count;
 
-	scanf("%d", &a);
-	tmp = a;
-	count = 1;
-	tmp_cnt = count;
-	for (int i = 0; i < 8; i++)
+	max = -1;
+	for (int i = 0; i < 9; i++)
 	{
-		scanf("%d", &a);
-		count++;
-		if (tmp < a)
+		scanf("%d", &n);
+		if (max < n)
 		{
-			tmp = a;
-			tmp_cnt = count;
+			max = n;
+			count = i;
 		}
 	}
-	printf("%d\n%d", tmp, tmp_cnt);
+	printf("%d\n%d", max, count + 1);
 	return (0);
 }
