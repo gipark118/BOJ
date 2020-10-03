@@ -4,17 +4,17 @@
 int main(void)
 {
     int n;
-    double max;
-    double *arr;
+    int *arr;
+    int max;
     double sum;
 
     scanf("%d", &n);
+    max = 0;
     sum = 0.0;
-    max = 0.0;
-    if (!(arr = (double *)malloc(sizeof(double) * n)))
+    if (!(arr = (int *)malloc(sizeof(int) * n)))
         return (0);
     for (int i = 0; i < n; i++)
-        scanf("%lf", &arr[i]);
+        scanf("%d", &arr[i]);
     for (int i = 0; i < n; i++)
     {
         if (arr[i] > max)
@@ -22,7 +22,7 @@ int main(void)
     }
     for (int j = 0; j < n; j++)
     {
-        sum += (arr[j] / max) * 100;
+        sum += ((double)arr[j] / max) * 100;
     }
     free(arr);
     printf("%.2lf", sum / n);
